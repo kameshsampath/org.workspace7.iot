@@ -1,0 +1,28 @@
+#
+#  APPLICATION
+#
+
+Bundle-Version: 1.0.0.${tstamp}
+Bundle-Description: A very simple LED bundle build using enRoute IoT tutorial
+Bundle-Name: My First IoT Bundle
+Bundle-Category: iot
+Private-Package: org.workspace7.iot.led.application.command
+
+EnRoute-Application: 	org.workspace7.iot.led
+JPM-Command:			led
+
+-includeresource: \
+	{readme.md}, \
+	{configuration=configuration}, \
+	{static=static}, \
+	web=web
+
+-buildpath: \
+	osgi.enroute.base.api,\
+	osgi.enroute.iot.circuit.provider,\
+	osgi.enroute.logger.simple.provider,\
+	osgi.enroute.iot.pi.provider,\
+	osgi.enroute.web.simple.provider
+	
+-testpath: \
+	osgi.enroute.junit.wrapper;version=4.12
